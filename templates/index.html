@@ -1,0 +1,238 @@
+{% extends "base.html" %}
+
+{% block title %}Team Registration - Code, Bid & Build{% endblock %}
+
+{% block content %}
+<div class="registration-container">
+    <!-- Hero Section -->
+    <section class="hero-section text-white text-center py-5 mb-5">
+        <div class="container">
+            <div class="animate__animated animate__fadeInDown">
+                <h1 class="display-4 fw-bold mb-3">
+                    <i class="fas fa-rocket"></i> Code, Bid & Build
+                </h1>
+                <p class="lead mb-0">A thrilling competition combining coding prowess with strategic bidding</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <div class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <div class="card registration-card shadow-lg animate__animated animate__fadeInUp">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <h2 class="card-title fw-bold mb-2">
+                                <i class="fas fa-users text-primary"></i> Team Registration
+                            </h2>
+                            <p class="text-muted">Fill in your team details to participate in Code, Bid & Build</p>
+                        </div>
+
+                        <form id="registrationForm" method="POST" action="{{ url_for('register_team') }}" novalidate>
+                            <!-- Team Information Section -->
+                            <div class="form-section mb-4">
+                                <h5 class="section-title mb-3">
+                                    <i class="fas fa-flag"></i> Team Information
+                                </h5>
+                                
+                                <div class="mb-3">
+                                    <label for="team_name" class="form-label fw-600">Team Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control form-control-lg" id="team_name" 
+                                           name="team_name" placeholder="e.g., Code Warriors" required>
+                                    <small class="form-text text-muted">Choose a unique name for your team</small>
+                                </div>
+                            </div>
+
+                            <!-- Team Leader Section -->
+                            <div class="form-section mb-4">
+                                <h5 class="section-title mb-3">
+                                    <i class="fas fa-user-tie"></i> Team Leader Details
+                                </h5>
+                                
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="leader_name" class="form-label fw-600">Full Name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control form-control-lg" id="leader_name" 
+                                               name="leader_name" placeholder="Enter full name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="leader_usn" class="form-label fw-600">USN <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control form-control-lg" id="leader_usn" 
+                                               name="leader_usn" placeholder="e.g., U23E01AB001" required>
+                                        <small class="form-text text-muted">Any alphanumeric USN accepted</small>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="leader_college" class="form-label fw-600">College Name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control form-control-lg" id="leader_college" 
+                                               name="leader_college" placeholder="Enter your college name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="leader_phone" class="form-label fw-600">Phone Number <span class="text-danger">*</span></label>
+                                        <input type="tel" class="form-control form-control-lg" id="leader_phone" 
+                                               name="leader_phone" placeholder="10-digit mobile number" maxlength="10" required>
+                                        <small class="form-text text-muted">10-digit number without country code</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Teammates Section -->
+                            <div class="form-section mb-4">
+                                <h5 class="section-title mb-3">
+                                    <i class="fas fa-people-group"></i> Team Members
+                                </h5>
+                                <p class="text-muted small">Minimum: Team Leader + Teammate 1 (required). Add one more teammate optionally.</p>
+
+                                <!-- Teammate 1 -->
+                                <div class="teammate-card mb-3 p-3">
+                                    <h6 class="text-primary mb-3">Teammate 1 <span class="text-danger">(required)</span></h6>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-2">
+                                            <label for="teammate1_name" class="form-label fw-600">Name <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="teammate1_name" 
+                                                   name="teammate1_name" placeholder="Teammate name" required>
+                                        </div>
+                                        <div class="col-md-6 mb-2">
+                                            <label for="teammate1_usn" class="form-label fw-600">USN <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="teammate1_usn" 
+                                                   name="teammate1_usn" placeholder="USN" required>
+                                            <small class="form-text text-muted">Any alphanumeric USN accepted</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Teammate 2 (optional) -->
+                                <div class="teammate-card mb-3 p-3">
+                                    <h6 class="text-primary mb-3">Teammate 2 <span class="text-muted">(optional)</span></h6>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-2">
+                                            <label for="teammate2_name" class="form-label fw-600">Name <span class="text-muted">(optional)</span></label>
+                                            <input type="text" class="form-control" id="teammate2_name" 
+                                                   name="teammate2_name" placeholder="Teammate name">
+                                        </div>
+                                        <div class="col-md-6 mb-2">
+                                            <label for="teammate2_usn" class="form-label fw-600">USN <span class="text-muted">(optional)</span></label>
+                                            <input type="text" class="form-control" id="teammate2_usn" 
+                                                   name="teammate2_usn" placeholder="USN">
+                                            <small class="form-text text-muted">Any alphanumeric USN accepted</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Teammate 3 (optional) -->
+                                
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="d-grid gap-2 mb-3">
+                                <button type="submit" class="btn btn-primary btn-lg fw-bold" id="submitBtn">
+                                    <i class="fas fa-check-circle"></i> Submit Registration
+                                </button>
+                            </div>
+
+                            <p class="text-center text-muted small">
+                                <i class="fas fa-shield-alt"></i> Your data is secure and only used for event coordination
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event Details Section -->
+    <section class="event-details-section py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-4 mb-4">
+                    <div class="detail-card text-center p-4">
+                        <div class="detail-icon">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <h5 class="mt-3 mb-2">Strategic Bidding</h5>
+                        <p class="text-muted">Bid strategically on resources and make smart business decisions</p>
+                    </div>
+                    
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="detail-card text-center p-4">
+                        <div class="detail-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h5 class="mt-3 mb-2">Coding Challenge</h5>
+                        <p class="text-muted">Solve algorithmic problems and showcase your coding skills</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="detail-card text-center p-4">
+                        <div class="detail-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h5 class="mt-3 mb-2">Win Prizes</h5>
+                        <p class="text-muted">Compete for exciting prizes and recognition</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rulebook Section -->
+    <section class="rulebook-section py-4">
+        <div class="container">
+            <div class="card shadow-sm p-4 text-center">
+                <h5 class="mb-3"><i class="fas fa-book"></i> Event Rulebook</h5>
+                <p class="text-muted mb-3">Download or view the full competition rulebook PDF.</p>
+                <a href="{{ url_for('static', filename='Code_Bid_Build_Rulebook.pdf') }}" class="btn btn-outline-primary me-2" target="_blank" rel="noopener">
+                    <i class="fas fa-eye"></i> View Rulebook
+                </a>
+                <a href="{{ url_for('static', filename='Code_Bid_Build_Rulebook.pdf') }}" class="btn btn-primary" download>
+                    <i class="fas fa-download"></i> Download PDF
+                </a>
+
+                <!-- Embedded PDF viewer -->
+                
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('registrationForm');
+    const submitBtn = document.getElementById('submitBtn');
+
+    // Form submission with loading state
+    form.addEventListener('submit', function(e) {
+        if (!form.checkValidity()) {
+            e.preventDefault();
+            e.stopPropagation();
+            form.classList.add('was-validated');
+        } else {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Submitting...';
+        }
+    });
+
+    // Real-time validation for phone number
+    const phoneInput = document.getElementById('leader_phone');
+    phoneInput.addEventListener('input', function() {
+        this.value = this.value.replace(/[^0-9]/g, '').substring(0, 10);
+    });
+
+    // Convert USN to uppercase
+    const usnInputs = document.querySelectorAll('input[name$="_usn"]');
+    usnInputs.forEach(input => {
+        input.addEventListener('input', function() {
+            this.value = this.value.toUpperCase();
+        });
+    });
+});
+</script>
+{% endblock %}

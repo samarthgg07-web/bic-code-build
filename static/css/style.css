@@ -1,0 +1,538 @@
+/* ===========================
+   Global Styles
+   =========================== */
+
+:root {
+    --primary-color: #1f4788;
+    --secondary-color: #ff6b35;
+    --success-color: #00d4aa;
+    --danger-color: #ff4757;
+    --dark-color: #2f3542;
+    --light-color: #f5f6fa;
+}
+
+* {
+    font-family: 'Poppins', 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #2f3542;
+    line-height: 1.6;
+}
+
+/* ===========================
+   Navigation Bar
+   =========================== */
+
+.navbar {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2d3e6f 100%) !important;
+    padding: 1rem 0;
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.navbar-brand i {
+    margin-right: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.btn-admin {
+    background-color: var(--secondary-color);
+    color: white !important;
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-admin:hover {
+    background-color: #e55a2b;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+}
+
+/* ===========================
+   Hero Section
+   =========================== */
+
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2d3e6f 50%, var(--secondary-color) 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 0 !important;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -5%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+/* ===========================
+   Registration Card
+   =========================== */
+
+.registration-container {
+    min-height: calc(100vh - 200px);
+    padding-top: 2rem;
+}
+
+.registration-card {
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.registration-card:hover {
+    box-shadow: 0 20px 60px rgba(31, 71, 136, 0.15) !important;
+    transform: translateY(-5px);
+}
+
+.card-title {
+    color: var(--primary-color);
+}
+
+.section-title {
+    color: var(--primary-color);
+    border-left: 4px solid var(--secondary-color);
+    padding-left: 0.75rem;
+    font-weight: 600;
+}
+
+.form-control, .form-control-lg {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-control-lg:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(31, 71, 136, 0.15);
+}
+
+.fw-600 {
+    font-weight: 600 !important;
+}
+
+.teammate-card {
+    background-color: #f8f9fa;
+    border-left: 4px solid var(--secondary-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.teammate-card:hover {
+    background-color: #f0f3f7;
+    transform: translateX(5px);
+}
+
+/* ===========================
+   Buttons
+   =========================== */
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2d3e6f 100%);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(31, 71, 136, 0.3);
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+    font-weight: 600;
+}
+
+.btn-success:hover {
+    background-color: #00b896;
+    border-color: #00b896;
+}
+
+/* ===========================
+   Admin Login
+   =========================== */
+
+.admin-login-container {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+}
+
+.admin-login-card {
+    border: none;
+    border-radius: 15px;
+    background: white;
+}
+
+.login-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2d3e6f 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+}
+
+/* ===========================
+   Admin Dashboard
+   =========================== */
+
+.admin-dashboard-container {
+    min-height: calc(100vh - 200px);
+    background-color: #f8f9fa;
+}
+
+.stat-card {
+    background: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.stat-icon.bg-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2d3e6f 100%);
+}
+
+.stat-icon.bg-success {
+    background: linear-gradient(135deg, var(--success-color) 0%, #00b896 100%);
+}
+
+.stat-icon.bg-info {
+    background: linear-gradient(135deg, #0091ad 0%, #0275c7 100%);
+}
+
+.stat-icon.bg-warning {
+    background: linear-gradient(135deg, #ffa502 0%, #ff7675 100%);
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table tbody tr {
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fa !important;
+    box-shadow: inset 0 -2px 0 0 var(--primary-color);
+}
+
+.table .badge {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+}
+
+/* ===========================
+   Event Details Section
+   =========================== */
+
+.event-details-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.detail-card {
+    background: white;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.detail-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+    box-shadow: 0 15px 40px rgba(31, 71, 136, 0.2);
+}
+
+.detail-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2d3e6f 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+}
+
+/* ===========================
+   Alerts
+   =========================== */
+
+.alert {
+    border: none;
+    border-radius: 8px;
+    border-left: 4px solid;
+}
+
+.alert-success {
+    border-left-color: var(--success-color);
+    background-color: rgba(0, 212, 170, 0.1);
+    color: var(--success-color);
+}
+
+.alert-danger {
+    border-left-color: var(--danger-color);
+    background-color: rgba(255, 71, 87, 0.1);
+    color: var(--danger-color);
+}
+
+.alert-warning {
+    border-left-color: #ffa502;
+    background-color: rgba(255, 165, 2, 0.1);
+    color: #d97706;
+}
+
+.alert-info {
+    border-left-color: #0275c7;
+    background-color: rgba(2, 117, 199, 0.1);
+    color: #0275c7;
+}
+
+/* ===========================
+   Error Pages
+   =========================== */
+
+.error-container {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+}
+
+.error-icon {
+    font-size: 5rem;
+    color: var(--primary-color);
+}
+
+/* ===========================
+   Footer
+   =========================== */
+
+footer {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2f3542 100%);
+    margin-top: auto;
+    border-top: 3px solid var(--secondary-color);
+}
+
+/* ===========================
+   Pagination
+   =========================== */
+
+.pagination {
+    gap: 0.25rem;
+}
+
+.page-link {
+    border: none;
+    border-radius: 6px;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.page-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.page-item.active .page-link {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2d3e6f 100%);
+    border-color: transparent;
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 3rem 0 !important;
+    }
+
+    .display-4 {
+        font-size: 2rem !important;
+    }
+
+    .display-6 {
+        font-size: 1.5rem !important;
+    }
+
+    .table {
+        font-size: 0.85rem;
+    }
+
+    .btn-lg {
+        font-size: 0.9rem !important;
+        padding: 0.5rem 1rem !important;
+    }
+
+    .stat-card {
+        margin-bottom: 1rem;
+    }
+
+    .detail-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container-fluid {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    .registration-card {
+        margin-bottom: 1rem;
+    }
+
+    .table-responsive {
+        font-size: 0.75rem;
+    }
+
+    .row > [class*='col-'] {
+        margin-bottom: 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===========================
+   Animations
+   =========================== */
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.animate__fadeInUp {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* ===========================
+   Utility Classes
+   =========================== */
+
+.bg-gradient {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2d3e6f 100%);
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.rounded-lg {
+    border-radius: 12px;
+}
+
+.shadow-lg {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ===========================
+   Spinner Loading
+   =========================== */
+
+.spinner-border-sm {
+    width: 1rem !important;
+    height: 1rem !important;
+    border-width: 0.2em !important;
+}
+
+/* ===========================
+   Form Validation
+   =========================== */
+
+.was-validated .form-control:invalid {
+    border-color: var(--danger-color);
+}
+
+.was-validated .form-control:invalid:focus {
+    border-color: var(--danger-color);
+    box-shadow: 0 0 0 0.2rem rgba(255, 71, 87, 0.25);
+}
+
+.was-validated .form-control:valid {
+    border-color: var(--success-color);
+}
+
+.was-validated .form-control:valid:focus {
+    border-color: var(--success-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 212, 170, 0.25);
+}
